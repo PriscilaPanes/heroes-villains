@@ -113,3 +113,8 @@ h2{
 #lower{
     padding-top: 50px;
 }
+
+#chartContainer{
+  border: solid 2px yellow;
+  border-radius: 5px ;
+}
