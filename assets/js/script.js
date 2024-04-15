@@ -2,7 +2,10 @@ function cargarGrafico(datos = [], name) {
     const chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
         title: {
-            text: `Estadísticas de poder para ${name}`
+            text: `Estadísticas de poder para ${name}`,
+            fontFamily:"Anton",
+            padding: 15,
+            margin: 15,
             
         },
         data: [{
