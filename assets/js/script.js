@@ -43,25 +43,21 @@ $("form").on("submit", function (event) {
 
     event.preventDefault();
     const id = $("#formSuperhero").val()
-    if (isNaN(id)){
-        alert("personaje no encontrado")
+    if(isNaN(id) || id<1 || id>732){
+        alert("Personaje no encontrado,Ingrese un número entre 1 y 732")
     }
-    else if(id>732|| id < 1){
-        alert ("personaje no encontrado")
-    }
-    else{ 
-        obtenerData(id);
-     }
-    
+    else{
+    obtenerData(id);}
+
 
 });
 
 function cargarCard(superhero) {
     $("#cardContainer").html(
-        `<div class="card border-warning mb-3" ">
+        `<div class="card border-warning mb-3 overflow-scroll" style="height: 370px; width: 100%;">
         <div class="row g-0">
-          <div class="col-md-4 d-block my-auto">
-            <img src="${superhero.image.url}" class="img-fluid rounded-start" alt="...">
+          <div class="col-md-4 ">
+            <img src="${superhero.image.url}" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
           </div>
           <div class="col-md-8">
             <div class="card-body">
