@@ -3,9 +3,11 @@ function cargarGrafico(datos = [], name) {
         animationEnabled: true,
         title: {
             text: `Estadísticas de poder para ${name}`
+            
         },
         data: [{
             type: "pie",
+           
             startAngle: 240,
             yValueFormatString: "##0.00\"%\"",
             indexLabel: "{label} {y}",
@@ -28,22 +30,29 @@ function obtenerData(id) {
                     label: key,
                     y: value
                 }
-
                 dataPoints.push(dato);
             }
             cargarGrafico(dataPoints, datos.name);
             cargarCard(datos);
         })
         .fail(function () {
-            alert("Personaje no Encontrado");
-        })
-
+            alert("error");
+        });
 }
 $("form").on("submit", function (event) {
-    
+
     event.preventDefault();
     const id = $("#formSuperhero").val()
-    obtenerData(id);
+    if (isNaN(id)){
+        alert("personaje no encontrado")
+    }
+    else if(id>732|| id < 1){
+        alert ("personaje no encontrado")
+    }
+    else{ 
+        obtenerData(id);
+     }
+    
 
 });
 
