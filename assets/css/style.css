@@ -31,5 +31,12 @@ h2 {
 footer{
   font-size: 20px;
   font-style: normal;
-  
+  height: 50px ;
+  background-color:rgb(33, 37, 41);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#develop{
+  padding-top: 20px;
 }
